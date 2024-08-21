@@ -1,11 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
     background-color: #f9f9f9;
-    color: #333;
+    color: #d623c1;
 }
 
 input,
@@ -13,17 +13,17 @@ button {
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 9px;
 }
 
 button {
-    background-color: #5cb85c;
+    background-color: #ff8ecc;
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: #ae4c87;
 }
 
 ul {
@@ -37,7 +37,7 @@ li {
     margin: 5px 0;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 9px;
     display: flex;
     justify-content: space-between;
 }
