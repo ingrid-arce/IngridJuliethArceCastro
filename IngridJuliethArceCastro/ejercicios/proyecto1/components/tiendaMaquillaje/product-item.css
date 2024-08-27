@@ -1,0 +1,7 @@
+.product-item {
+    flex: 1 1 calc(10% - 20px);
+    padding: 15px;
+    margin: 10px;
+    border: solid ;
+    border-radius: 30px;
+  }

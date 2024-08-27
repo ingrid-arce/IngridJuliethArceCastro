@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import ProductList from "../components/tiendaMaquillaje/productList";
 import ProductDetails from "../components/tiendaMaquillaje/productDetails";
 import Cart from "../components/tiendaMaquillaje/cart";
+import "./App";
 
 
 const App =()=>{
@@ -34,8 +35,9 @@ const agregarProducto = (product) =>{
   setCartItems([...cartItems, product]);
 };
 return(
-  <div>
-    <h1>Tienda de maquillaje</h1>
+  <div className="mamaweo">
+
+    <h1 className="titulo">Tienda de maquillaje</h1>
     <ProductList products={products} verDetalles={visualizarDetalles}/>
     {selectedProduct && (
       <ProductDetails product={selectedProduct} añadirCarrito ={agregarProducto}/>

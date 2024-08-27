@@ -1,5 +1,6 @@
 import React from "react";
 import ProductItem from "./productItem";
+import  "./productList.css";
 
 import brillos from '../../src/img/brillos.png';
 import brochas from '../../src/img/brochas.png';
@@ -29,7 +30,7 @@ const images={
 
 const ProductList = ({products, verDetalles}) =>{
     return(
-        <div>
+        <div className="product-list">
             {products.map((product)=>(
                 <ProductItem
                 key={product.id}

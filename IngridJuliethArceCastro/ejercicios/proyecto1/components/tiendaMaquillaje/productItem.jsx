@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './product-item.css'
+
 import brillos from "../../src/img/brillos.png";
 import brochas from "../../src/img/brochas.png";
 import brochas2en1 from "../../src/img/brochas2en1.png";
@@ -29,7 +31,7 @@ const imagenes={
 
 const ProductItem = ({ name, price, img, verDetalles}) =>{
     return (
-        <div>
+        <div className='product-item'>
             <img src={img} alt={name} />
             <p>{name}</p>
             <p>{price}</p>

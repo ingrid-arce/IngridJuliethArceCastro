@@ -33,7 +33,7 @@ const ProductDetails = ({product, añadirCarrito}) =>{
     return(
         <div>
             <h3>{product.name}</h3>
-            <img src={image} alt="product.name" />
+            {image && <img src={image} alt={product.name} />}
             <p>precio: ${product.price}</p>
             <p>product.description</p>
             <button onClick={()=> añadirCarrito(product)}>Agregar al carrito.</button>
