@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React,{useState} from "react";
+import ProductList from "../components/tiendaMaquillaje/productList";
+import ProductDetails from "../components/tiendaMaquillaje/productDetails";
+import Cart from "../components/tiendaMaquillaje/cart";
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App =()=>{
 
-export default App
+const [products] = useState([
+
+{id:1, name:"lipgloss de Coca-Cola (con color)", price: 7.000, description:" lipgloss de cocacola con un lindo color y agradable sabor"},
+{id:2, name:"Kit Brocha Trendy Ojos x 6 ", price:20.000, description:"Es un kit básico infaltable para un maquillaje de ojos. Contiene 6 brochas de pelo sintético, Incluye1 brocha dual para cejas, 1 brocha para delineador, 1 brocha difuminadora grande, 1 brocha plana pequeña para cortes, 1 brocha plana grande para depositar producto y 1 brocha en punta para precisión,Trendy no testea en animales."},
+{id:3, name:"Kit de brochas x5", price:15.000, description:"Este kit incluye 5 brochas tradicionales, cepillo de cejas, brocha de cejas, brocha plana, brocha de detalle y brocha grande"},
+{id:4, name:" Brow fix-Brow kit.", price:12.000, description:" Maquillaje el polvo y fijador cremoso con pigmentos naturales que sirve para delinear, rellenar y resaltar el color de tus cejas de una forma natural"},
+{id:5, name:"Iluminadores 3 Tonos", price:12.000, description:"Iluminador glow me X3 ANYLADY Su alta pigmentación permite conseguir un maquillaje perfecto e iluminado. Viene en 3 tonos"},
+{id:6, name:"Pestañina Cat Trendy", price:15.000, description:"Todas nuestras referencias son lavables pero no se corren fácil durante el día, puedes usarla incluso en climas cálidos.Todas tienen la fórmula casi igual, lo único que cambia es la presentación, cepillo y empaque"},
+{id:7, name:"Pestañina DAY 4D ", price:12.000, description:"es aprueba de agua"},
+{id:8, name:"Polvos sueltos Matte", price:17.000, description:"Tono banana Con micro-componentes translucidos capaces de sellar con éxito tu maquillaje. Polvo banana y traslucido con efecto prolongado y HD. PLUS: Obtén acabados profesionales en el set con nuestro polvo de efecto rebote sobre el flash y luces artificiales"},
+{id:9, name:"Primer Serum Watermelon Trendy", price:25.000, description:"Su textura en gel te deja un acabado mate gracias a sus partículas en forma de corazón lucirás radiante, juvenil y fresca. Puede usarse en todo tipo de piel pero es ideal para piel grasa. Prepara el rostro antes del maquillaje, alarga la duración del maquillaje, mejora su apariencia, disminuye las líneas de expresión, tiene efecto tensor en los poros e hidrata la piel permitiendo obtener un mejor acabado.  Deja una sensación suave, seca y de acabado mate sobre la piel, logrando obtener un maquillaje perfecto. "},
+{id:10, name:"Day rubor", price:8.000, description:"Rubor de muy buena pigmentación y adherencia a la piel. Sus colores son perfectos para todas los tonos de piel."},
+{id:11, name:"Sombra Frutas Trendy Ref C06-09 Ref Uva", price:15.000, description:"Unidad de empaque (Display) = 12 unidades Paleta monocromática en tonos morados.Tiene una combinación de 9 tonos. De color intenso y de fácil difuminación. Trae sombras mate, metálicas y satinadas El morado es tono en tendencia."},
+]);
+
+const [selectedProduct, setSelectedProduct]= useState(null);
+const [cartItems, setCartItems] = useState([]);
+
+const visualizarDetalles =(product) =>{
+  console.log("producto seleccionado", product)
+  setSelectedProduct(product);
+};
+
+
+const agregarProducto = (product) =>{
+  setCartItems([...cartItems, product]);
+};
+return(
+  <div>
+    <h1>Tienda de maquillaje</h1>
+    <ProductList products={products} verDetalles={visualizarDetalles}/>
+    {selectedProduct && (
+      <ProductDetails product={selectedProduct} añadirCarrito ={agregarProducto}/>
+    )}
+    <Cart items ={cartItems}/>
+  </div>
+);
+};
+export default App;

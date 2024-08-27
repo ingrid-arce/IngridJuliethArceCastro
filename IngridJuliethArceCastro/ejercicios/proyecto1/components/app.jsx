@@ -25,3 +25,4 @@ function app(){
         </div>
       );
 }
+export default app 
