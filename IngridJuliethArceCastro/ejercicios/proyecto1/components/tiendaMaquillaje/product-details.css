@@ -1,0 +1,16 @@
+body{display: flex;
+justify-content: center;}
+.product-details{
+    color: #000;
+    background: #fff;
+    border-radius: 20px;
+    width: 100vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  
+}
+.infor{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import './product-details.css';
 
 import brillos from '../../src/img/brillos.png';
 import brochas from '../../src/img/brochas.png';
@@ -31,11 +32,11 @@ const ProductDetails = ({product, añadirCarrito}) =>{
    
     const image = imagenes[product.id];
     return(
-        <div>
+        <div  className="product-details">
             <h3>{product.name}</h3>
             {image && <img src={image} alt={product.name} />}
-            <p>precio: ${product.price}</p>
-            <p>product.description</p>
+           <div className="infor"> <p>precio: ${product.price}</p>
+            <p>product.description</p></div>
             <button onClick={()=> añadirCarrito(product)}>Agregar al carrito.</button>
         </div>
     );

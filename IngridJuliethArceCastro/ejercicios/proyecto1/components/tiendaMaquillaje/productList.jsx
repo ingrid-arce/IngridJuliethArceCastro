@@ -13,6 +13,8 @@ import polvos from '../../src/img/polvos.png';
 import primer from '../../src/img/primer.png';
 import rubor from '../../src/img/rubor.png';
 import sombras from '../../src/img/sombras.png';
+import tonico from '../../src/img/tonico.png';
+
 
 const images={
     1:brillos,
@@ -26,6 +28,7 @@ const images={
     9:primer,
     10:rubor,
     11:sombras,
+    12:tonico
 };
 
 const ProductList = ({products, verDetalles}) =>{

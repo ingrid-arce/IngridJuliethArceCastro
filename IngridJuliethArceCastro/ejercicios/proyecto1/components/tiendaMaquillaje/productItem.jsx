@@ -35,7 +35,7 @@ const ProductItem = ({ name, price, img, verDetalles}) =>{
             <img src={img} alt={name} />
             <p>{name}</p>
             <p>{price}</p>
-            <button onClick={verDetalles}>Ver detalles del producto</button>
+            <button onClick={verDetalles}>Ver Detalles</button>
         </div>
     );
 };
