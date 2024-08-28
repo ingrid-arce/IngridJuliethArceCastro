@@ -12,7 +12,7 @@ import polvos from '../../src/img/polvos.png';
 import primer from '../../src/img/primer.png';
 import rubor from '../../src/img/rubor.png';
 import sombras from '../../src/img/sombras.png';
-
+import tonico from '../../src/img/tonico.png';
 const imagenes={
     1:brillos,
     2:brochas,
@@ -25,19 +25,23 @@ const imagenes={
     9:primer,
     10:rubor,
     11:sombras,
+    12:tonico,  
 };
 
-const ProductDetails = ({product, añadirCarrito}) =>{
+const ProductDetails = ({product, añadirCarrito,onClose}) =>{
 
    
     const image = imagenes[product.id];
     return(
+        <div className="modal">
         <div  className="product-details">
+            <span className="cerrarDe" onClick={onClose}>x</span>
             <h3>{product.name}</h3>
             {image && <img src={image} alt={product.name} />}
            <div className="infor"> <p>precio: ${product.price}</p>
-            <p>product.description</p></div>
+            <p>{product.description}</p></div>
             <button onClick={()=> añadirCarrito(product)}>Agregar al carrito.</button>
+        </div>
         </div>
     );
 };
